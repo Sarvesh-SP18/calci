@@ -1,5 +1,5 @@
 const express = require("express");
-
+const cors = require("cors");
 const morgan = require("morgan");
 
 const port = process.env.PORT | 3000;
@@ -7,6 +7,7 @@ const port = process.env.PORT | 3000;
 const app = express();
 
 app.use(morgan("dev"));
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
